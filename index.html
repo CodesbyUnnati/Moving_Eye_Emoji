@@ -21,7 +21,7 @@
       height: 500px;
       background: #FCC21B;
       border-radius: 50%;
-      left: 25%;
+      left: 34%;
       top: 55%;
       transform: translateY(-50%);
     }
@@ -29,11 +29,11 @@
     .mouth {
       position: absolute;
       margin: auto;
-      top: 62%;
+      top: 72%;
       width: 100px;
       height: 50px;
       background: red;
-      left: 45%;
+      left: 47%;
       transform: translateY(-50%);
       border-bottom-left-radius: 50%;
       border-bottom-right-radius: 50%;
@@ -73,7 +73,18 @@
       border: 15px solid #333;
     }
 
-    @media screen {}
+    @media (max-width: 1325px) {
+
+      .face {
+        left: 25%;
+      }
+
+      .mouth {
+        top: 62%;
+        left: 45%;
+      }
+    }
+ 
   </style>
 
   <div class="face"></div>
