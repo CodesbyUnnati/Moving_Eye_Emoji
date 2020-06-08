@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-        <title>MOVING EYES</title>
-  </head>
-  <body>
-    <style>
-      body{
+
+<head>
+  <meta charset="utf-8">
+  <title>MOVING EYES</title>
+</head>
+
+<body>
+  <style>
+    body {
       margin: 0;
       padding: 0;
       background: #34495e;
-      }
-      .face
-      {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: #FCC21B;
-        border-radius: 50%;
-        left: 520px;
-        top: 150px;
-      }
-      .mouth
-      {
-        position: absolute;
-        width: 100px;
-        height: 50px;
-        background: red;
-        left: 720px;
-        top: 520px;
-        border-bottom-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border: 1px solid black;
-      }
-      .eyes{
+    }
+
+    .face {
+      position: absolute;
+      margin: auto;
+      width: 500px;
+      height: 500px;
+      background: #FCC21B;
+      border-radius: 50%;
+      left: 25%;
+      top: 55%;
+      transform: translateY(-50%);
+    }
+
+    .mouth {
+      position: absolute;
+      margin: auto;
+      top: 62%;
+      width: 100px;
+      height: 50px;
+      background: red;
+      left: 45%;
+      transform: translateY(-50%);
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: 1px solid black;
+    }
+
+    .eyes {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       width: 100%;
       text-align: center;
-      }
-      .eye{
+    }
+
+    .eye {
       width: 130px;
       height: 120px;
       background: #fff;
       display: inline-block;
-      margin: 40px;
+      margin: 30px;
       border-radius: 50%;
       position: relative;
       overflow: hidden;
-      }
+    }
 
-      .ball{
+    .ball {
       width: 40px;
       height: 40px;
       background: #000;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       border-radius: 50%;
       border: 15px solid #333;
-      }
+    }
 
-    </style>
+    @media screen {}
+  </style>
 
-<div class="face"></div>
-<div class="mouth"></div>
+  <div class="face"></div>
+  <div class="mouth"></div>
   <div class="eyes">
     <div class="eye">
       <div class="ball"></div>
@@ -80,23 +89,24 @@
   </div>
 
 
-<script>
-  var balls = document.getElementsByClassName("ball");
-  document.onmousemove = function(){
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
-    //event.clientX => get the horizontal coordinate of the mouse
-    //event.clientY => get the Vertical coordinate of the mouse
-    //window.innerWidth => get the browser width
-    //window.innerHeight => get the browser height
+  <script>
+    var balls = document.getElementsByClassName("ball");
+    document.onmousemove = function () {
+      var x = event.clientX * 100 / window.innerWidth + "%";
+      var y = event.clientY * 100 / window.innerHeight + "%";
+      //event.clientX => get the horizontal coordinate of the mouse
+      //event.clientY => get the Vertical coordinate of the mouse
+      //window.innerWidth => get the browser width
+      //window.innerHeight => get the browser height
 
-    for(var i=0;i<2;i++){
-      balls[i].style.left = x;  //So that it moves to left and right
-      balls[i].style.top = y;   //It moves top and bottom
-      balls[i].style.transform = "translate(-"+x+",-"+y+")"; // It doesn't crosses the eye boundary.
+      for (var i = 0; i < 2; i++) {
+        balls[i].style.left = x; //So that it moves to left and right
+        balls[i].style.top = y; //It moves top and bottom
+        balls[i].style.transform = "translate(-" + x + ",-" + y + ")"; // It doesn't crosses the eye boundary.
+      }
     }
-  }
-</script>
+  </script>
 
-  </body>
+</body>
+
 </html>
